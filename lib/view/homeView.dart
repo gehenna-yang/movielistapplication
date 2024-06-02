@@ -43,7 +43,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Movie Search', style: TextStyle(color: Colors.black87, fontSize: 15, fontWeight: FontWeight.w500)),
+        title: const Center(child: Text('Movie Search', style: TextStyle(color: Colors.black87, fontSize: 15, fontWeight: FontWeight.w500))),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

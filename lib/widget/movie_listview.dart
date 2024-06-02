@@ -41,18 +41,6 @@ class MovieListView extends StatelessWidget {
             (movieController.dwb.length > 0 ? movieController.dwb.length+1:1):movieController.dwb.length
           )
         ),
-      // child: Obx(() =>
-      //   ListView.separated(
-      //     controller: scrollController,
-      //     itemBuilder: (_, i) {
-      //       return MovieItem(movie: movieController.dwb[i]);
-      //     },
-      //     separatorBuilder: (_, i) {
-      //       return const SizedBox(height: 10);
-      //     },
-      //     itemCount: movieController.dwb.length
-      //   ),
-      // )
     );
   }
 }
