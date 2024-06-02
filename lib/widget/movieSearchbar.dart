@@ -11,11 +11,11 @@ class MovieSearchBar extends StatelessWidget {
   Movie_Controller movieController;
   TextEditingController search_controller;
 
-  // final TextEditingController search_controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+    return Container(
+      color: Colors.indigo[200],
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
       child: Container(
         width: disp_width,
         decoration: BoxDecoration(

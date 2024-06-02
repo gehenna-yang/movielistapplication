@@ -23,12 +23,10 @@ class MovieItem extends StatelessWidget {
         );
       },
       child: Container(
-        decoration: BoxDecoration(
-          color: const Color(0xFFE6E6FA),
-          border: Border.all(style: BorderStyle.solid, width: 1.5, color: Colors.black54),
-          borderRadius: const BorderRadius.all(Radius.circular(5)),
+        decoration: const BoxDecoration(
+          border: Border(bottom: BorderSide(style: BorderStyle.solid, width: 0.5, color: Colors.black54)),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 25),
         height: 90,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

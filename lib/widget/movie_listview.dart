@@ -15,8 +15,7 @@ class MovieListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+    return SizedBox(
       child: Obx(() =>
           ListView.separated(
             controller: scrollController,
@@ -36,7 +35,7 @@ class MovieListView extends StatelessWidget {
               }
             },
             separatorBuilder: (_, i) {
-              return const SizedBox(height: 10);
+              return const SizedBox(height: 5);
             },
             itemCount: movieController.isLoading.value ?
             (movieController.dwb.length > 0 ? movieController.dwb.length+1:1):movieController.dwb.length
