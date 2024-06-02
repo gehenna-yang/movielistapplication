@@ -18,6 +18,8 @@ class _HomeViewState extends State<HomeView> {
   final TextEditingController searchController = TextEditingController();
   final ScrollController scrollController = ScrollController();
 
+  bool isFloating = false;
+
   @override
   void initState() {
     movieController.initData();
@@ -26,6 +28,7 @@ class _HomeViewState extends State<HomeView> {
     movieController.getMovieList(txt: 'star');
 
     scrollController.addListener(sListener);
+    scrollController.addListener(floatingListener);
   }
 
   @override
@@ -45,6 +48,14 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         title: const Center(child: Text('Movie Search', style: TextStyle(color: Colors.black87, fontSize: 15, fontWeight: FontWeight.w500))),
       ),
+      floatingActionButton: isFloating ? FloatingActionButton(
+        backgroundColor: Colors.indigo[200],
+        onPressed: () {
+          print('Floating button push');
+          scrollToTop();
+        },
+        child: const Icon(Icons.arrow_upward, color: Colors.indigo,),
+      ):null,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -71,5 +82,25 @@ class _HomeViewState extends State<HomeView> {
         movieController.getMovieList(txt: movieController.searchTxt.value);
       }
     }
+  }
+
+  void floatingListener() {
+    if (scrollController.position.pixels > scrollController.position.minScrollExtent){
+      if(!isFloating){
+        setState(() {
+          isFloating = true;
+        });
+      }
+    } else if(scrollController.position.pixels == scrollController.position.minScrollExtent){
+      if(isFloating){
+        setState(() {
+          isFloating = false;
+        });
+      }
+    }
+  }
+
+  void scrollToTop() {
+    scrollController.animateTo(0, duration: const Duration(microseconds: 500), curve: Curves.linear);
   }
 }
