@@ -51,25 +51,25 @@ ratingsList({ List<ratings>? list}) {
 
 Widget metronomeColorParse(ratings value) {
   if(value.Source.contains('Database')) {
-    if(double.parse(value.Value.split('/')[0]) >= 5.0 && double.parse(value.Value.split('/')[0]) < 7.5) {
+    if(double.parse(value.Value.split('/')[0]) >= 5.0 && double.parse(value.Value.split('/')[0]) < 8.0) {
       return const Icon(CupertinoIcons.metronome, color: Colors.amber, size: 50,);
-    } else if (double.parse(value.Value.split('/')[0]) >= 7.5) {
+    } else if (double.parse(value.Value.split('/')[0]) >= 8.0) {
       return const Icon(CupertinoIcons.metronome, color: Colors.green, size: 50,);
     } else {
       return const Icon(CupertinoIcons.metronome, color: Colors.deepOrange, size: 50,);
     }
   } else if (value.Source.contains('Tomato')) {
-    if(int.parse(value.Value.split('%')[0]) >= 50 && int.parse(value.Value.split('%')[0]) < 75) {
+    if(int.parse(value.Value.split('%')[0]) >= 50 && int.parse(value.Value.split('%')[0]) < 80) {
       return const Icon(CupertinoIcons.metronome, color: Colors.amber, size: 50,);
-    } else if (int.parse(value.Value.split('%')[0]) >= 75) {
+    } else if (int.parse(value.Value.split('%')[0]) >= 80) {
       return const Icon(CupertinoIcons.metronome, color: Colors.green, size: 50,);
     } else {
       return const Icon(CupertinoIcons.metronome, color: Colors.deepOrange, size: 50,);
     }
   } else {
-    if(double.parse(value.Value.split('/')[0]) >= 50 && double.parse(value.Value.split('/')[0]) < 75) {
+    if(double.parse(value.Value.split('/')[0]) >= 50 && double.parse(value.Value.split('/')[0]) < 80) {
       return const Icon(CupertinoIcons.metronome, color: Colors.amber, size: 50,);
-    } else if (double.parse(value.Value.split('/')[0]) >= 75) {
+    } else if (double.parse(value.Value.split('/')[0]) >= 80) {
       return const Icon(CupertinoIcons.metronome, color: Colors.green, size: 50,);
     } else {
       return const Icon(CupertinoIcons.metronome, color: Colors.deepOrange, size: 50,);
