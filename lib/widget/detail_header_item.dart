@@ -19,20 +19,23 @@ class DetailHeaderItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          partLine(),
           Container(
             width: disp_width,
-            padding: const EdgeInsets.symmetric(vertical: 10),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const Text('TITLE :', style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w600, fontSize: 20)),
+                const SizedBox(width: 5,),
                 Flexible(
-                  child: Text('TITLE: ${movie.Title!}',
+                  child: Text(movie.Title!,
                     style: const TextStyle(color: Colors.black87, fontWeight: FontWeight.w600, fontSize: 20),
                   ),
                 ),
               ],
             ),
           ),
+          partLine(),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -95,8 +98,17 @@ class DetailHeaderItem extends StatelessWidget {
               )
             ],
           ),
+          partLine(),
         ]
       ),
     );
   }
+}
+
+Widget partLine(){
+  return Container(
+    margin: const EdgeInsets.symmetric(vertical: 15),
+    width: disp_width, height: 1,
+    color: Colors.blueGrey,
+  );
 }

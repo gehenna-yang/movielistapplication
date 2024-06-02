@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:movielist_application/controller/movie_controller.dart';
 import 'package:movielist_application/model/data_movieDetail.dart';
 import 'package:movielist_application/widget/detail_body_item.dart';
+import 'package:movielist_application/widget/detail_bottom_item.dart';
 import 'package:movielist_application/widget/detail_header_item.dart';
 
 class MovieDetailView extends StatefulWidget {
@@ -37,6 +38,7 @@ class _MovieDetailViewState extends State<MovieDetailView> {
               children: [
                 DetailHeaderItem(movie: movie),
                 DetailBodyItem(movie: movie),
+                DetailBottomItem(movie: movie),
               ],
             ):
             const Padding(
